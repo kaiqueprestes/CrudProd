@@ -27,11 +27,12 @@ namespace CrudProd
         MySqlDataReader dataRd;
         string querySql;
 
+
         public MainWindow()
         {
             InitializeComponent();
         }
-
+        
         private void button_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -75,6 +76,13 @@ namespace CrudProd
                 conexaoDb = null;
                 executrQuery = null;
             }
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            var cadastroProd = new MainWindow();
+
+            cadastroProd.Show();
         }
     }
 }
