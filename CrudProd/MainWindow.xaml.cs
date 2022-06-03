@@ -21,11 +21,11 @@ namespace CrudProd
     /// </summary>
     public partial class MainWindow : Window
     {
-        MySqlConnection conexaoDb;
-        MySqlCommand executrQuery;
-        MySqlDataAdapter dataAdp;
-        MySqlDataReader dataRd;
-        string querySql;
+        //MySqlConnection conexaoDb;
+        //MySqlCommand executrQuery;
+        //MySqlDataAdapter dataAdp;
+        //MySqlDataReader dataRd;
+        //string querySql;
 
 
         public MainWindow()
@@ -33,56 +33,57 @@ namespace CrudProd
             InitializeComponent();
         }
         
-        private void button_Click(object sender, RoutedEventArgs e)
+        ////private void button_Click(object sender, RoutedEventArgs e)
+        ////{
+        ////    try
+        ////    {
+        ////        var dataHoraCadastro = DateTime.Now.ToString("yyyy/dd/MM HH:mm:ss"); //DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")
+
+        ////        var ativo = "0";
+
+        ////        if (checkAtivo.IsChecked == true)
+        ////        {
+        ////            ativo = "1";
+        ////        }
+
+        ////        conexaoDb = new MySqlConnection("Server = localhost; Database = testdev; Uid = root; Pwd = root;");
+
+        ////        querySql = "INSERT INTO PRODUTO (descricao, codGrupo, codBarra, precoCusto, precoVenda,dataHoraCadastro, ativo)" +
+        ////            "VALUES(@descricao,@codGrupo, @codBarra,@precoCusto,@precoVenda,@dataHoraCadastro,@ativo)";
+
+        ////        executrQuery = new MySqlCommand(querySql, conexaoDb);
+        ////        executrQuery.Parameters.AddWithValue("@descricao", txtDescricao.Text);
+        ////        executrQuery.Parameters.AddWithValue("@codBarra", txtCodBarra.Text);
+        ////        executrQuery.Parameters.AddWithValue("@codGrupo", "1");
+        ////        executrQuery.Parameters.AddWithValue("@precoCusto", txtPrecoCusto.Text);
+        ////        executrQuery.Parameters.AddWithValue("@precoVenda", txtPrecoVenda.Text);
+        ////        executrQuery.Parameters.AddWithValue("@dataHoraCadastro", dataHoraCadastro);
+        ////        executrQuery.Parameters.AddWithValue("@ativo", ativo);
+
+        ////        conexaoDb.Open();
+
+        ////        executrQuery.ExecuteNonQuery();
+        ////        MessageBox.Show("Produto Cadastrado!");
+
+        ////    }
+        ////    catch (Exception ex)
+        ////    {
+        ////        MessageBox.Show(ex.Message);
+        ////    }
+        ////    finally
+        ////    {
+        ////        conexaoDb.Close();
+        ////        conexaoDb = null;
+        ////        executrQuery = null;
+        ////    }
+        ////}
+
+        private void buttonCad_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                var dataHoraCadastro = DateTime.Now.ToString("yyyy/dd/MM HH:mm:ss"); //DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")
+            var cadastroProduto = new cadastroProduto();
 
-                var ativo = "0";
-
-                if (checkAtivo.IsChecked == true)
-                {
-                    ativo = "1";
-                }
-
-                conexaoDb = new MySqlConnection("Server = localhost; Database = testdev; Uid = root; Pwd = root;");
-
-                querySql = "INSERT INTO PRODUTO (descricao, codGrupo, codBarra, precoCusto, precoVenda,dataHoraCadastro, ativo)" +
-                    "VALUES(@descricao,@codGrupo, @codBarra,@precoCusto,@precoVenda,@dataHoraCadastro,@ativo)";
-
-                executrQuery = new MySqlCommand(querySql, conexaoDb);
-                executrQuery.Parameters.AddWithValue("@descricao", txtDescricao.Text);
-                executrQuery.Parameters.AddWithValue("@codBarra", txtCodBarra.Text);
-                executrQuery.Parameters.AddWithValue("@codGrupo", "1");
-                executrQuery.Parameters.AddWithValue("@precoCusto", txtPrecoCusto.Text);
-                executrQuery.Parameters.AddWithValue("@precoVenda", txtPrecoVenda.Text);
-                executrQuery.Parameters.AddWithValue("@dataHoraCadastro", dataHoraCadastro);
-                executrQuery.Parameters.AddWithValue("@ativo", ativo);
-
-                conexaoDb.Open();
-
-                executrQuery.ExecuteNonQuery();
-                MessageBox.Show("Produto Cadastrado!");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conexaoDb.Close();
-                conexaoDb = null;
-                executrQuery = null;
-            }
-        }
-
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            var cadastroProd = new MainWindow();
-
-            cadastroProd.Show();
+            cadastroProduto.Show();
+            
         }
     }
 }
