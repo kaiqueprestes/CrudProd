@@ -85,5 +85,12 @@ namespace CrudProd
             cadastroProduto.Show();
             
         }
+
+        private void buttonConsulta_Click(object sender, RoutedEventArgs e)
+        {
+            var consultarProduto = new consultaProduto();
+
+            consultarProduto.Show();
+        }
     }
 }

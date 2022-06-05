@@ -1,0 +1,14 @@
+﻿<Window x:Class="CrudProd.consultaProduto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CrudProd"
+        mc:Ignorable="d"
+        Title="consultaProduto" Height="370" Width="650">
+    <Grid>
+        <Button x:Name="buttonAlteraProduto" Content="Alterar Produto" HorizontalAlignment="Left" Margin="119,278,0,0" VerticalAlignment="Top" Width="106" Click="buttonAlteraProduto_Click"/>
+        <Button x:Name="buttonDeletaProduto" Content="Excluir Produto" HorizontalAlignment="Left" Margin="339,283,0,0" VerticalAlignment="Top" Click="buttonDeletaProduto_Click"/>
+
+    </Grid>
+</Window>

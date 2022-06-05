@@ -13,12 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 
+
 namespace CrudProd
 {
-    /// <summary>
-    /// Lógica interna para cadastroProduto.xaml
-    /// </summary>
-    public partial class cadastroProduto : Window
+    public partial class alteraProduto : Window
     {
         MySqlConnection conexaoDb;
         MySqlCommand executrQuery;
@@ -26,7 +24,7 @@ namespace CrudProd
         MySqlDataReader dataRd;
         string querySql;
 
-        public cadastroProduto()
+        public alteraProduto()
         {
             InitializeComponent();
         }
@@ -39,29 +37,30 @@ namespace CrudProd
 
                 var ativo = "0";
 
-                if (checkAtivo1.IsChecked == true)
+                if (checkAtivo.IsChecked == true)
                 {
                     ativo = "1";
                 }
 
                 conexaoDb = new MySqlConnection("Server = localhost; Database = testdev; Uid = root; Pwd = root;");
 
-                querySql = "INSERT INTO PRODUTO (descricao, codGrupo, codBarra, precoCusto, precoVenda,dataHoraCadastro, ativo)" +
-                    "VALUES(@descricao,@codGrupo, @codBarra,@precoCusto,@precoVenda,@dataHoraCadastro,@ativo)";
+                querySql = "UPDATE PRODUTO SET descricao=@descricao, codGrupo=@codGrupo, codBarra=@codBarra, precoCusto=@precoCusto, precoVenda=@precoVenda, dataHoraCadastro=@dataHoraCadastro, ativo =@ativo" +
+                    "WHERE cod=@cod";
 
                 executrQuery = new MySqlCommand(querySql, conexaoDb);
-                executrQuery.Parameters.AddWithValue("@descricao", txtDescricao1.Text);
-                executrQuery.Parameters.AddWithValue("@codBarra", txtCodBarra1.Text);
+                executrQuery.Parameters.AddWithValue("@descricao", txtDescricao.Text);
+                executrQuery.Parameters.AddWithValue("@codBarra", txtCodigoBarra.Text);
                 executrQuery.Parameters.AddWithValue("@codGrupo", "1");
-                executrQuery.Parameters.AddWithValue("@precoCusto", txtPrecoCusto1.Text);
-                executrQuery.Parameters.AddWithValue("@precoVenda", txtPrecoVenda1.Text);
+                executrQuery.Parameters.AddWithValue("@precoCusto", txtPrecoCusto.Text);
+                executrQuery.Parameters.AddWithValue("@precoVenda", txtPrecoVenda.Text);
                 executrQuery.Parameters.AddWithValue("@dataHoraCadastro", dataHoraCadastro);
                 executrQuery.Parameters.AddWithValue("@ativo", ativo);
+                executrQuery.Parameters.AddWithValue("@cod", txtCodProd.Text);
 
                 conexaoDb.Open();
 
                 executrQuery.ExecuteNonQuery();
-                MessageBox.Show("Produto Cadastrado!");
+                MessageBox.Show("Produto Alterado!");
 
                 this.Close();
                 //pesquisar regex 
@@ -76,16 +75,6 @@ namespace CrudProd
                 conexaoDb = null;
                 executrQuery = null;
             }
-        }
-
-        private void buttonDeletaProduto_Click(object sender, RoutedEventArgs e)
-        {
-          
-        }
-
-        private void buttonAlteraProduto_Click(object sender, RoutedEventArgs e)
-        {
-           
         }
     }
 }

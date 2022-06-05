@@ -5,17 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrudProd"
         mc:Ignorable="d"
-        Title="Cadastro de Produto" Height="396" Width="726">
-    <Grid Margin="0,0,-108,-77">
+        Title="" Height="287" Width="283">
+    <Grid Margin="0,-15,-553,-58">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="33*"/>
-            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="168*"/>
+            <ColumnDefinition Width="91*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="167*"/>
             <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="buttonCad" Content="Cadastrar Produto" HorizontalAlignment="Left" Margin="93,93,0,0" VerticalAlignment="Top" Width="141" FontSize="14" FontWeight="Bold" Click="buttonCad_Click"/>
+        <Button x:Name="buttonCad" Content="Cadastro de Produtos" HorizontalAlignment="Left" Margin="68,48,0,0" VerticalAlignment="Top" Width="155" FontSize="14" FontWeight="Bold" Click="buttonCad_Click" Height="25"/>
+        <Button x:Name="buttonConsulta" Content="Consultar Produto" HorizontalAlignment="Left" Margin="68,107,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="25" Click="buttonConsulta_Click" Width="155"/>
+
 
     </Grid>
 </Window>
