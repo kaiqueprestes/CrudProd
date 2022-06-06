@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStyle="ToolWindow"
         WindowStartupLocation="CenterScreen"
-        Title="consultaProduto" Height="400" Width="650">
+        Title="Consulta Produto" Height="400" Width="650">
     <Grid>
         <Button x:Name="buttonAlteraProduto" Content="Alterar Produto" HorizontalAlignment="Left" Margin="90,310,0,0" VerticalAlignment="Top" Width="120" Click="buttonAlteraProduto_Click" Height="22" FontSize="14" FontWeight="Bold">
             <Button.Background>

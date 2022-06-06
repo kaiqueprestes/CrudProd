@@ -55,7 +55,7 @@ namespace CrudProd
 
                 executrQuery = new MySqlCommand(querySql, conexaoDb);
                 executrQuery.Parameters.AddWithValue("@descricao", txtDescricao1.Text);
-                executrQuery.Parameters.AddWithValue("@codBarra",txtCodBarra1);
+                executrQuery.Parameters.AddWithValue("@codBarra",txtCodBarra1.Text);
                 executrQuery.Parameters.AddWithValue("@codGrupo", grupo);
                 executrQuery.Parameters.AddWithValue("@precoCusto", txtPrecoCusto1.Text.Replace(",", "."));
                 executrQuery.Parameters.AddWithValue("@precoVenda", txtPrecoVenda1.Text.Replace(",", "."));
