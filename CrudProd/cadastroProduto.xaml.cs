@@ -35,49 +35,56 @@ namespace CrudProd
         {
             try
             {
-                var dataHoraCadastro = DateTime.Now.ToString("yyyy/dd/MM HH:mm:ss"); //DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")
-
-                var ativo = "0";
-
-                if (checkAtivo1.IsChecked == true)
+                if (string.IsNullOrEmpty(txtDescricao1.Text) 
+                    || string.IsNullOrEmpty(comboTipoGrupo1.Text) || string.IsNullOrEmpty(txtCodBarra1.Text)
+                    || string.IsNullOrEmpty(txtPrecoCusto1.Text) || string.IsNullOrEmpty(txtPrecoVenda1.Text))
                 {
-                    ativo = "1";
+                    MessageBox.Show("Complete os campos!");
                 }
 
-                var separaGrupo = comboTipoGrupo1.Text.Split("-");
+                else
+                {
+                    var dataHoraCadastro = DateTime.Now.ToString("yyyy/dd/MM HH:mm:ss"); //DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")
 
-                var grupo = separaGrupo[0];
+                    var ativo = "0";
 
-                conexaoDb = new MySqlConnection("Server = localhost; Database = testdev; Uid = root; Pwd = root;");
+                    if (checkAtivo1.IsChecked == true)
+                    {
+                        ativo = "1";
+                    }
 
-                querySql = "INSERT INTO PRODUTO (descricao, codGrupo, codBarra, precoCusto, precoVenda,dataHoraCadastro, ativo)" +
-                    "VALUES(@descricao,@codGrupo, @codBarra,@precoCusto,@precoVenda,@dataHoraCadastro,@ativo)";
+                    var separaGrupo = comboTipoGrupo1.Text.Split("-");
 
-                executrQuery = new MySqlCommand(querySql, conexaoDb);
-                executrQuery.Parameters.AddWithValue("@descricao", txtDescricao1.Text);
-                executrQuery.Parameters.AddWithValue("@codBarra",txtCodBarra1.Text);
-                executrQuery.Parameters.AddWithValue("@codGrupo", grupo);
-                executrQuery.Parameters.AddWithValue("@precoCusto", txtPrecoCusto1.Text.Replace(",", "."));
-                executrQuery.Parameters.AddWithValue("@precoVenda", txtPrecoVenda1.Text.Replace(",", "."));
-                executrQuery.Parameters.AddWithValue("@dataHoraCadastro", dataHoraCadastro);
-                executrQuery.Parameters.AddWithValue("@ativo", ativo);
+                    var grupo = separaGrupo[0];
 
-                conexaoDb.Open();
+                    conexaoDb = new MySqlConnection("Server = localhost; Database = testdev; Uid = root; Pwd = root;");
 
-                executrQuery.ExecuteNonQuery();
-                MessageBox.Show("Produto Cadastrado!");
+                    querySql = "INSERT INTO PRODUTO (descricao, codGrupo, codBarra, precoCusto, precoVenda,dataHoraCadastro, ativo)" +
+                        "VALUES(@descricao,@codGrupo, @codBarra,@precoCusto,@precoVenda,@dataHoraCadastro,@ativo)";
 
-                this.Close();
+                    executrQuery = new MySqlCommand(querySql, conexaoDb);
+                    executrQuery.Parameters.AddWithValue("@descricao", txtDescricao1.Text);
+                    executrQuery.Parameters.AddWithValue("@codBarra", txtCodBarra1.Text);
+                    executrQuery.Parameters.AddWithValue("@codGrupo", grupo);
+                    executrQuery.Parameters.AddWithValue("@precoCusto", txtPrecoCusto1.Text.Replace(",", "."));
+                    executrQuery.Parameters.AddWithValue("@precoVenda", txtPrecoVenda1.Text.Replace(",", "."));
+                    executrQuery.Parameters.AddWithValue("@dataHoraCadastro", dataHoraCadastro);
+                    executrQuery.Parameters.AddWithValue("@ativo", ativo);
+
+                    conexaoDb.Open();
+
+                    executrQuery.ExecuteNonQuery();
+                    MessageBox.Show("Produto Cadastrado!");
+                    conexaoDb.Close();
+                    conexaoDb = null;
+                    executrQuery = null;
+
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conexaoDb.Close();
-                conexaoDb = null;
-                executrQuery = null;
             }
         }
     }
