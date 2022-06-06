@@ -5,10 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrudProd"
         mc:Ignorable="d"
-        Title="consultaProduto" Height="370" Width="650">
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="consultaProduto" Height="400" Width="650">
     <Grid>
-        <Button x:Name="buttonAlteraProduto" Content="Alterar Produto" HorizontalAlignment="Left" Margin="119,278,0,0" VerticalAlignment="Top" Width="106" Click="buttonAlteraProduto_Click"/>
-        <Button x:Name="buttonDeletaProduto" Content="Excluir Produto" HorizontalAlignment="Left" Margin="339,283,0,0" VerticalAlignment="Top" Click="buttonDeletaProduto_Click"/>
+        <Button x:Name="buttonAlteraProduto" Content="Alterar Produto" HorizontalAlignment="Left" Margin="90,310,0,0" VerticalAlignment="Top" Width="120" Click="buttonAlteraProduto_Click" Height="22" FontSize="14" FontWeight="Bold">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF16C5EC" Offset="0.3"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="buttonDeletaProduto" Content="Excluir Produto" HorizontalAlignment="Left" Margin="436,310,0,0" VerticalAlignment="Top" Click="buttonDeletaProduto_Click" Height="22" Width="120" FontSize="14" FontWeight="Bold">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF16C5EC" Offset="0.3"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="71,48,0,0" Text="Descrição do Produto" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Height="17" Width="157" FontSize="14" TextAlignment="Justify"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="71,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" Width="124" FontSize="14" FontWeight="Bold"><Run Language="pt-br" Text="Código de Barra"/></TextBlock>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="71,180,0,0" Text="Preço de Custo" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="124" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.358,0.679"/>
+        <ComboBox x:Name="comboTipoGrupo" HorizontalAlignment="Left" Margin="389,93,0,0" VerticalAlignment="Top" Width="214" Height="21" Text="Tipo de Grupo">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FF16C5EC" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="1-GERAL"/>
+            <ComboBoxItem Content="2-AÇOUGUE"/>
+            <ComboBoxItem Content="3-HORTIFRUTI"/>
+            <ComboBoxItem Content="4-PADARIA"/>
+            <ComboBoxItem Content="5-GELADEIRA"/>
+        </ComboBox>
+        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="71,265,0,0" Text="Ativar Produto" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="124" FontSize="14" FontWeight="Bold"/>
+        <CheckBox x:Name="checkAtivo" Content="Ativo" HorizontalAlignment="Left" Margin="389,271,0,0" VerticalAlignment="Top" Height="18" Width="86" FontSize="14" FontWeight="Bold"/>
+        <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="71,225,0,0" Text="Preço de Venda" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="124" FontSize="14" FontWeight="Bold"/>
+        <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Margin="71,90,0,0" Text="Tipo de Grupo" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="20" Width="104"/>
+        <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Margin="389,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214"/>
+        <TextBox x:Name="txtCodigoBarra" HorizontalAlignment="Left" Margin="389,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="21"/>
+        <TextBox x:Name="txtPrecoCusto" HorizontalAlignment="Left" Margin="389,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="21"/>
+        <TextBox x:Name="txtPrecoVenda" HorizontalAlignment="Left" Margin="389,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" RenderTransformOrigin="0.158,-0.165" Height="21"/>
+        <TextBox x:Name="txtCodProd" HorizontalAlignment="Left" Margin="389,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Height="21"/>
+        <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Margin="71,13,0,0" Text="Código do Produto" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Button x:Name="buttonConsultaProduto" Content="Consultar Produto" HorizontalAlignment="Center" Margin="0,310,0,0" VerticalAlignment="Top" Width="125" Click="buttonConsultaProduto_Click" Height="22" FontWeight="Bold" FontSize="14">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF16C5EC" Offset="0.3"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

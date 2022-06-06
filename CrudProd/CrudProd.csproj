@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="alteraProduto.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="alteraProduto.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.29" />
   </ItemGroup>
 

@@ -5,20 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrudProd"
         mc:Ignorable="d"
-        Title="" Height="287" Width="283">
-    <Grid Margin="0,-15,-553,-58">
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="Tela Inicial" Height="250" Width="270">
+    <Grid Margin="0,-15,0,-16">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="129*"/>
-            <ColumnDefinition Width="39*"/>
-            <ColumnDefinition Width="168*"/>
-            <ColumnDefinition Width="91*"/>
+            <ColumnDefinition Width="200*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="167*"/>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="200*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="buttonCad" Content="Cadastro de Produtos" HorizontalAlignment="Left" Margin="68,48,0,0" VerticalAlignment="Top" Width="155" FontSize="14" FontWeight="Bold" Click="buttonCad_Click" Height="25"/>
-        <Button x:Name="buttonConsulta" Content="Consultar Produto" HorizontalAlignment="Left" Margin="68,107,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="25" Click="buttonConsulta_Click" Width="155"/>
+        <Button x:Name="buttonCad" Content="Cadastrar Produto" HorizontalAlignment="Center" Margin="0,48,0,0" VerticalAlignment="Top" Width="155" FontSize="14" FontWeight="Bold" Click="buttonCad_Click" Height="25">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF16C5EC" Offset="0.3"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="buttonConsulta" Content="Consultar Produto" HorizontalAlignment="Center" Margin="0,107,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="25" Click="buttonConsulta_Click" Width="155">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF16C5EC" Offset="0.3"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button" Content="Sair" HorizontalAlignment="Left" Margin="90,173,0,0" VerticalAlignment="Top" Width="78" FontSize="14" FontWeight="Bold" Height="22" Click="button_Click" Background="#FFF35252"/>
 
 
     </Grid>

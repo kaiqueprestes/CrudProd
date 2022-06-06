@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrudProd"
         mc:Ignorable="d"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen"
         Title="Cadastro de Produto" Height="370" Width="650">
     <Grid>
-        <Grid Margin="-41,0,-60,-77">
+        <Grid Margin="-41,-12,-60,-65">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="116*"/>
                 <ColumnDefinition Width="502*"/>
@@ -21,18 +23,28 @@
             <TextBox x:Name="txtDescricao1" HorizontalAlignment="Left" Margin="293,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" Height="22" Grid.Column="1"/>
             <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Margin="5,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="113" FontSize="14" FontWeight="Bold" Grid.Column="1"><Run Language="pt-br" Text="Código de Barra"/></TextBlock>
             <TextBlock x:Name="textBlock8" HorizontalAlignment="Left" Margin="5,173,0,0" Text="Preço de Custo" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" Width="113" FontSize="14" FontWeight="Bold" RenderTransformOrigin="0.358,0.679" Grid.Column="1"/>
-            <ComboBox x:Name="comboTipoGrupo1" HorizontalAlignment="Left" Margin="293,91,0,0" VerticalAlignment="Top" Width="194" Height="20" Text="Tipo de Grupo" Grid.Column="1">
-                <ComboBoxItem Content="1"/>
+            <ComboBox x:Name="comboTipoGrupo1" HorizontalAlignment="Left" Margin="293,91,0,0" VerticalAlignment="Top" Width="194" Height="20" Text="Tipo de Grupo" Grid.Column="1" Background="#FF16C5EC">
+                <ComboBoxItem Content="1-GERAL"/>
+                <ComboBoxItem Content="2-AÇOUGUE"/>
+                <ComboBoxItem Content="3-HORTIFRUTI"/>
+                <ComboBoxItem Content="4-PADARIA"/>
+                <ComboBoxItem Content="5-GELADEIRA"/>
             </ComboBox>
             <TextBlock x:Name="textBlock9" HorizontalAlignment="Left" Margin="5,252,0,0" Text="Ativar Produto" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="113" FontSize="14" FontWeight="Bold" Grid.Column="1"/>
-            <CheckBox x:Name="checkAtivo1" Content="Ativo" HorizontalAlignment="Left" Margin="293,258,0,0" VerticalAlignment="Top" Height="17" Width="78" Grid.Column="1"/>
+            <CheckBox x:Name="checkAtivo1" Content="Ativo" HorizontalAlignment="Left" Margin="293,258,0,0" VerticalAlignment="Top" Height="17" Width="78" Grid.Column="1" FontSize="14" FontWeight="Bold"/>
             <TextBlock x:Name="textBlock10" HorizontalAlignment="Left" Margin="5,215,0,0" Text="Preço de Venda" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="113" FontSize="14" FontWeight="Bold" Grid.Column="1"/>
             <TextBlock x:Name="textBlock11" HorizontalAlignment="Left" Margin="5,88,0,0" Text="Tipo de Grupo" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="19" Width="95" Grid.Column="1"/>
             <TextBox x:Name="txtCodBarra1" HorizontalAlignment="Left" Margin="293,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" Height="18" Grid.Column="1"/>
             <TextBox x:Name="txtPrecoVenda1" HorizontalAlignment="Left" Margin="293,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" Height="18" Grid.Column="1"/>
             <TextBox x:Name="txtPrecoCusto1" HorizontalAlignment="Left" Margin="293,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" Height="18" Grid.Column="1"/>
-            <Button x:Name="button1" Content="Cadastrar Produto" HorizontalAlignment="Left" Margin="133,293,0,0" VerticalAlignment="Top" Width="199" FontSize="14" FontWeight="Bold" Click="button_Click" Grid.Column="1"/>
-            <Button x:Name="buttonDeletaProduto" Content="Excluir Produto" HorizontalAlignment="Left" Margin="351,293,0,0" VerticalAlignment="Top" Width="136" Height="23" FontSize="14" FontWeight="Bold" Click="buttonDeletaProduto_Click" Grid.Column="1"/>
+            <Button x:Name="button1" Content="Cadastrar Produto" HorizontalAlignment="Left" Margin="133,293,0,0" VerticalAlignment="Top" Width="199" FontSize="14" FontWeight="Bold" Click="button_Click" Grid.Column="1">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF16C5EC" Offset="0.3"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
 
         </Grid>
 

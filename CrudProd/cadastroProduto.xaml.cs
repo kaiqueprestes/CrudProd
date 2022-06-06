@@ -44,6 +44,10 @@ namespace CrudProd
                     ativo = "1";
                 }
 
+                var separaGrupo = comboTipoGrupo1.Text.Split("-");
+
+                var grupo = separaGrupo[0];
+
                 conexaoDb = new MySqlConnection("Server = localhost; Database = testdev; Uid = root; Pwd = root;");
 
                 querySql = "INSERT INTO PRODUTO (descricao, codGrupo, codBarra, precoCusto, precoVenda,dataHoraCadastro, ativo)" +
@@ -51,10 +55,10 @@ namespace CrudProd
 
                 executrQuery = new MySqlCommand(querySql, conexaoDb);
                 executrQuery.Parameters.AddWithValue("@descricao", txtDescricao1.Text);
-                executrQuery.Parameters.AddWithValue("@codBarra", txtCodBarra1.Text);
-                executrQuery.Parameters.AddWithValue("@codGrupo", "1");
-                executrQuery.Parameters.AddWithValue("@precoCusto", txtPrecoCusto1.Text);
-                executrQuery.Parameters.AddWithValue("@precoVenda", txtPrecoVenda1.Text);
+                executrQuery.Parameters.AddWithValue("@codBarra",txtCodBarra1);
+                executrQuery.Parameters.AddWithValue("@codGrupo", grupo);
+                executrQuery.Parameters.AddWithValue("@precoCusto", txtPrecoCusto1.Text.Replace(",", "."));
+                executrQuery.Parameters.AddWithValue("@precoVenda", txtPrecoVenda1.Text.Replace(",", "."));
                 executrQuery.Parameters.AddWithValue("@dataHoraCadastro", dataHoraCadastro);
                 executrQuery.Parameters.AddWithValue("@ativo", ativo);
 
@@ -64,7 +68,6 @@ namespace CrudProd
                 MessageBox.Show("Produto Cadastrado!");
 
                 this.Close();
-                //pesquisar regex 
             }
             catch (Exception ex)
             {
@@ -76,16 +79,6 @@ namespace CrudProd
                 conexaoDb = null;
                 executrQuery = null;
             }
-        }
-
-        private void buttonDeletaProduto_Click(object sender, RoutedEventArgs e)
-        {
-          
-        }
-
-        private void buttonAlteraProduto_Click(object sender, RoutedEventArgs e)
-        {
-           
         }
     }
 }
